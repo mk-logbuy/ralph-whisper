@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Send a start/stop toggle to the running dictation daemon (loopback socket).
+# Bound to a GNOME custom shortcut by install.sh.
+APP="$HOME/.local/share/whisper-dictation"
+cd "$APP" && exec "$APP/venv/bin/python" -m ralph_whisper toggle

@@ -1,0 +1,2 @@
+# Core (CPU works out of the box; pulls numpy + ctranslate2)
+faster-whisper>=1.2

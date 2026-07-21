@@ -1,0 +1,19 @@
+[Unit]
+Description=ralph-whisper push-to-talk dictation daemon
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+# X11 access (needed by xdotool to type into the focused window).
+# Filled in by install.sh from your current session.
+Environment=DISPLAY=@DISPLAY@
+Environment=XAUTHORITY=@XAUTHORITY@
+Environment=PATH=/usr/bin:/bin:%h/.local/bin
+WorkingDirectory=%h/.local/share/whisper-dictation
+ExecStart=%h/.local/share/whisper-dictation/venv/bin/python -m ralph_whisper
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=default.target

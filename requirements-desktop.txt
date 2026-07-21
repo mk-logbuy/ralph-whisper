@@ -1,0 +1,5 @@
+# macOS / Windows backends: in-process audio, global hotkey, clipboard.
+# (Linux uses pw-record + xdotool + GNOME shortcut instead — not needed there.)
+sounddevice
+pynput
+pyperclip

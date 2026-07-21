@@ -1,0 +1,6 @@
+# CUDA 12 runtime libraries for GPU inference (NVIDIA proprietary driver
+# must be installed separately). Install with:
+#   venv/bin/pip install -r requirements-gpu.txt
+# then run bin/switch-to-gpu.sh
+nvidia-cublas-cu12
+nvidia-cudnn-cu12

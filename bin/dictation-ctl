@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+S=whisper-dictation.service
+case "$1" in
+  start)   systemctl --user start  $S && echo "started";;
+  stop)    systemctl --user stop   $S && echo "stopped";;
+  restart) systemctl --user restart $S && echo "restarted";;
+  status)  systemctl --user --no-pager status $S | head -8;;
+  log)     tail -f "$HOME/.local/share/whisper-dictation/dictate.log";;
+  enable)  systemctl --user enable $S && echo "will start at login";;
+  disable) systemctl --user disable $S && echo "won't start at login";;
+  *) echo "usage: dictation-ctl {start|stop|restart|status|log|enable|disable}";;
+esac
